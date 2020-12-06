@@ -1,10 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 
 function App() {
   const [ inputList, setInputList ] = useState([{value: undefined}]);
   const [ status, setStatus ] = useState(0);
   const [ lot, setLot ] = useState(undefined);
+
+  const options = {
+    root: document.querySelector('.main'),
+    rootMargin: '5px',
+    threshold: [0, 0.5, 1]
+  }
 
   //+ 누르면 input 추가
   const addList = () => {
@@ -105,9 +111,14 @@ function After({ onClick }){
   )
 }
 
-function First({list, onClick, onChange }){
+const scroll = {
+  overflowY: 'auto',
+  height: '615px'
+};
+
+function First({list, onClick, onChange, ref }){
   return (
-    <div>
+    <div style={ scroll }>
       {list.map((e,i) => {
         return <Main key={i} value={e.value} id={i} onChange={ onChange }/>
       })}
