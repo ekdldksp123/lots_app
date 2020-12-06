@@ -6,12 +6,6 @@ function App() {
   const [ status, setStatus ] = useState(0);
   const [ lot, setLot ] = useState(undefined);
 
-  const options = {
-    root: document.querySelector('.main'),
-    rootMargin: '5px',
-    threshold: [0, 0.5, 1]
-  }
-
   //+ 누르면 input 추가
   const addList = () => {
     setInputList( inputList.concat([{value: undefined}]));
@@ -113,7 +107,7 @@ function After({ onClick }){
 
 const scroll = {
   overflowY: 'auto',
-  height: '615px'
+  height: '635px'
 };
 
 function First({list, onClick, onChange, ref }){
