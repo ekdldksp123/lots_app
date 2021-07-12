@@ -84,7 +84,10 @@ function Header(){
 function Main({value, id, onChange}){
   return(
     <div>
-      <input type='text' id={id} className='input' placeholder='Enter the name' value={ value || '' } onChange={ onChange } />
+      <input 
+        type='text' id={id} className='input' placeholder='Enter the name' 
+        value={ value || '' } onChange={ onChange } 
+      />
     </div>
   )
 }
@@ -110,7 +113,7 @@ const scroll = {
   height: '635px'
 };
 
-function First({list, onClick, onChange, ref }){
+function First({list, onClick, onChange }){
   return (
     <div style={ scroll }>
       {list.map((e,i) => {
